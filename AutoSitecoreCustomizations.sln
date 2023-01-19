@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoSitecoreCustomizations", "AutoSitecoreCustomizations\AutoSitecoreCustomizations.csproj", "{3ABC41C5-9171-416E-A2D5-7EDB88A11BC8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoSitecoreCustomizations.Tests", "AutoSitecoreCustomizations.Tests\AutoSitecoreCustomizations.Tests.csproj", "{5FB0CDFE-DBA8-4075-A807-9A55D58FBE53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3ABC41C5-9171-416E-A2D5-7EDB88A11BC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ABC41C5-9171-416E-A2D5-7EDB88A11BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ABC41C5-9171-416E-A2D5-7EDB88A11BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ABC41C5-9171-416E-A2D5-7EDB88A11BC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FB0CDFE-DBA8-4075-A807-9A55D58FBE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FB0CDFE-DBA8-4075-A807-9A55D58FBE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FB0CDFE-DBA8-4075-A807-9A55D58FBE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FB0CDFE-DBA8-4075-A807-9A55D58FBE53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DD3DB44-9F5E-4722-BB2D-7A77A92CEA0D}
+	EndGlobalSection
+EndGlobal
