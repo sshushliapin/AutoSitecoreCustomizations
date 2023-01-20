@@ -10,5 +10,11 @@ namespace AutoSitecoreCustomizations.Tests
         {
             Assert.NotNull(item);
         }
+
+        [Theory, AutoNSubstituteData]
+        public void CreateItemSetsRandomTemplateId(Item item)
+        {
+            Assert.NotNull(item.TemplateID);
+        }
     }
 }

@@ -38,6 +38,7 @@ namespace AutoSitecoreCustomizations
                 ItemData.Empty,
                 fixture.Create<Database>()));
             item.Template.Returns(template);
+            item.TemplateID.Returns(fixture.Create<ID>());
 
             item.Version.Returns(Version.First);
             item.Versions.Returns(Substitute.For<ItemVersions>(item));
