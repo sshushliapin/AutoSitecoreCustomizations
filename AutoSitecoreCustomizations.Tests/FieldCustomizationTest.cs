@@ -6,26 +6,26 @@ namespace AutoSitecoreCustomizations.Tests
     public class FieldCustomizationTest
     {
         [Theory, AutoNSubstituteData]
-        public void CreateFieldWithRandomId(Field field)
+        public void CreateFieldSetsRandomId(Field field)
         {
             Assert.False(field.ID.IsNull);
         }
 
         [Theory, AutoNSubstituteData]
-        public void CreateFieldWithIdBasedName(Field field)
+        public void CreateFieldSetsIdBasedName(Field field)
         {
             var expected = $"field_{field.ID}";
             Assert.Equal(expected, field.Name);
         }
 
         [Theory, AutoNSubstituteData]
-        public void CreateFieldWithDatabase(Field field)
+        public void CreateFieldSetsDatabase(Field field)
         {
             Assert.NotNull(field.Database);
         }
 
         [Theory, AutoNSubstituteData]
-        public void CreateFieldWithItem(Field field)
+        public void CreateFieldSetsItem(Field field)
         {
             Assert.NotNull(field.Item);
         }

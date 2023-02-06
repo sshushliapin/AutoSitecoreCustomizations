@@ -7,7 +7,7 @@ using Sitecore.Data.Items;
 
 namespace AutoSitecoreCustomizations
 {
-    public class FieldCustomization : ICustomization
+    internal class FieldCustomization : ICustomization
     {
         public void Customize(IFixture fixture)
         {

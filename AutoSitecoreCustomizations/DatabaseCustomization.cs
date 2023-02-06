@@ -4,7 +4,7 @@ using Sitecore.Data;
 
 namespace AutoSitecoreCustomizations
 {
-    public class DatabaseCustomization : ICustomization
+    internal class DatabaseCustomization : ICustomization
     {
         public void Customize(IFixture fixture)
         {
