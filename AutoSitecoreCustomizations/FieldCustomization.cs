@@ -7,7 +7,7 @@ using Sitecore.Data.Items;
 
 namespace AutoSitecoreCustomizations
 {
-    internal class FieldCustomization : ICustomization
+    public class FieldCustomization : ICustomization
     {
         public void Customize(IFixture fixture)
         {
@@ -20,10 +20,12 @@ namespace AutoSitecoreCustomizations
         private static Field CreateField(ISpecimenBuilder fixture)
         {
             var item = fixture.Create<Item>();
+            var fieldId = fixture.Create<ID>();
             var field = Substitute.For<Field>(
-                fixture.Create<ID>(),
+                fieldId,
                 item);
             field.Database.Returns(item.Database);
+            field.Name.Returns($"field_{fieldId}");
 
             return field;
         }
