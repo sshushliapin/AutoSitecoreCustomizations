@@ -9,6 +9,47 @@ namespace AutoSitecoreCustomizations.Tests
     public class Scenarios
     {
         [Theory, AutoNSubstituteData]
+        public void GetFieldValueFromIndexerByName(
+            Item item,
+            string expected)
+        {
+            item["field"].Returns(expected);
+            Assert.Equal(expected, item["field"]);
+        }
+
+        [Theory, AutoNSubstituteData]
+        public void GetFieldValueFromIndexerById(
+            Item item,
+            ID fieldId,
+            string expected)
+        {
+            item[fieldId].Returns(expected);
+            Assert.Equal(expected, item[fieldId]);
+        }
+
+        [Theory, AutoNSubstituteData]
+        public void GetFieldValueByName(
+            Item item,
+            Field field,
+            string expected)
+        {
+            field.Value.Returns(expected);
+            item.Fields[field.Name].Returns(field);
+            Assert.Equal(expected, item.Fields[field.Name].Value);
+        }
+
+        [Theory, AutoNSubstituteData]
+        public void GetFieldValueById(
+            Item item,
+            Field field,
+            string expected)
+        {
+            field.Value.Returns(expected);
+            item.Fields[field.ID].Returns(field);
+            Assert.Equal(expected, item.Fields[field.ID].Value);
+        }
+
+        [Theory, AutoNSubstituteData]
         public void GetMultilistFieldTargets(
             Item currentItem,
             Field multilistField,
