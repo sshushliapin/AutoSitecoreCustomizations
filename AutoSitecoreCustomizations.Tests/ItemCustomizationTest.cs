@@ -68,6 +68,13 @@ namespace AutoSitecoreCustomizations.Tests
         }
 
         [Theory, AutoNSubstituteData]
+        public void CreateItemSetsEqualTemplateId(Item item)
+        {
+            Assert.Equal(item.TemplateID, item.Template.ID);
+            Assert.Equal(item.TemplateID, item.Template.InnerItem.ID);
+        }
+
+        [Theory, AutoNSubstituteData]
         public void CreateItemSetsVersionFirst(Item item)
         {
             Assert.Equal(Version.First, item.Version);

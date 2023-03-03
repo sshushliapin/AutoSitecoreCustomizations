@@ -36,12 +36,14 @@ namespace AutoSitecoreCustomizations
             item.Languages.Returns(new[] { language });
             item.OriginalLanguage.Returns(language);
 
+            var templateId = fixture.Create<ID>();
             var template = Substitute.For<TemplateItem>(Substitute.For<Item>(
-                fixture.Create<ID>(),
+                templateId,
                 ItemData.Empty,
                 fixture.Create<Database>()));
+            template.ID.Returns(templateId);
             item.Template.Returns(template);
-            item.TemplateID.Returns(fixture.Create<ID>());
+            item.TemplateID.Returns(templateId);
 
             item.Version.Returns(Version.First);
             item.Versions.Returns(Substitute.For<ItemVersions>(item));
