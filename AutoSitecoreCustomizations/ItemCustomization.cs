@@ -29,6 +29,8 @@ namespace AutoSitecoreCustomizations
             item.Children.Returns(Substitute.For<ChildList>(item, new List<Item>()));
             item.Fields.Returns(Substitute.For<FieldCollection>(item));
 
+            item.Axes.Returns(Substitute.For<ItemAxes>(item));
+
             var language = Language.Parse("en");
             item.Language.Returns(language);
             item.Languages.Returns(new[] { language });

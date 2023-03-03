@@ -4,10 +4,21 @@ using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Xunit;
+
 namespace AutoSitecoreCustomizations.Tests
 {
     public class Scenarios
     {
+        [Theory, AutoNSubstituteData]
+        public void GetAxesDescendants(
+            Item item,
+            Item expected)
+        {
+            item.Axes.GetDescendants().Returns(new[] { expected });
+            var actual = item.Axes.GetDescendants().Single();
+            Assert.Same(expected, actual);
+        }
+
         [Theory, AutoNSubstituteData]
         public void GetFieldValueFromIndexerByName(
             Item item,

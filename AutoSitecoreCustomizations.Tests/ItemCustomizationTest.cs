@@ -26,6 +26,12 @@ namespace AutoSitecoreCustomizations.Tests
         }
 
         [Theory, AutoNSubstituteData]
+        public void CreateItemSetsAxes(Item item)
+        {
+            Assert.NotNull(item.Axes);
+        }
+
+        [Theory, AutoNSubstituteData]
         public void CreateItemSetsEmptyFields(Item item)
         {
             Assert.Empty(item.Fields);
