@@ -32,6 +32,7 @@ namespace AutoSitecoreCustomizations
             var language = Language.Parse("en");
             item.Language.Returns(language);
             item.Languages.Returns(new[] { language });
+            item.OriginalLanguage.Returns(language);
 
             var template = Substitute.For<TemplateItem>(Substitute.For<Item>(
                 fixture.Create<ID>(),

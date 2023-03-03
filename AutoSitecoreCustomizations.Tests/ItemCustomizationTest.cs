@@ -44,6 +44,12 @@ namespace AutoSitecoreCustomizations.Tests
         }
 
         [Theory, AutoNSubstituteData]
+        public void CreateItemSetsOriginalLanguage(Item item)
+        {
+            Assert.Equal("en", item.OriginalLanguage.Name);
+        }
+
+        [Theory, AutoNSubstituteData]
         public void CreateItemSetsTemplate(Item item)
         {
             Assert.NotNull(item.Template);
