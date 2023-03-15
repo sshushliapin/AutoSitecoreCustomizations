@@ -25,7 +25,8 @@ namespace AutoSitecoreCustomizations
                 fixture.Create<ID>(),
                 ItemData.Empty,
                 fixture.Create<Database>());
-            item.Name.Returns("item_" + fixture.Create<string>());
+            var name = "item_" + fixture.Create<string>();
+            item.Name.Returns(name);
             item.Children.Returns(Substitute.For<ChildList>(item, new List<Item>()));
             item.Fields.Returns(Substitute.For<FieldCollection>(item));
 
@@ -35,6 +36,8 @@ namespace AutoSitecoreCustomizations
             item.Language.Returns(language);
             item.Languages.Returns(new[] { language });
             item.OriginalLanguage.Returns(language);
+            item.Paths.Returns(Substitute.For<ItemPath>(item));
+            item.Paths.FullPath.Returns($"/sitecore/content/home/{name}");
 
             var templateId = fixture.Create<ID>();
             var template = Substitute.For<TemplateItem>(Substitute.For<Item>(

@@ -56,6 +56,19 @@ namespace AutoSitecoreCustomizations.Tests
         }
 
         [Theory, AutoNSubstituteData]
+        public void CreateItemSetsPaths(Item item)
+        {
+            Assert.NotNull(item.Paths);
+        }
+
+        [Theory, AutoNSubstituteData]
+        public void CreateItemSetsDefaultFullPath(Item item)
+        {
+            var expected = $"/sitecore/content/home/{item.Name}";
+            Assert.Equal(expected, item.Paths.FullPath);
+        }
+
+        [Theory, AutoNSubstituteData]
         public void CreateItemSetsTemplate(Item item)
         {
             Assert.NotNull(item.Template);
